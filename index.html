@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Matching Memory Game</title>
+    <meta name="description" content="">
+    <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Matching Memory Game</h1>
+        </header>
+
+        <div id ="timer_descript">Hurry! Time's-A-Counting...</div>
+        <div id="timer"></div>
+        <div id ="stop_timer" onclick="clearInterval(timerVar)">Stop time</div>
+        <br>
+
+    <section class="score-panel">
+            <span id="title">Performance Metric:</span>
+            <ul class="stars">
+        		<li><i class="fa fa-star"></i></li>
+        		<li><i class="fa fa-star"></i></li>
+        		<li><i class="fa fa-star"></i></li>
+        	</ul>
+
+        	<span id="moves">0</span> Clicks
+
+            <div class="restart">
+                <i class="fa fa-repeat"></i>
+                <span id="title2">Restart</span>
+        	</div>
+        </section>
+
+        <ul class="deck">
+            <li class="card">
+                <i class="fa fa-diamond"></i>
+            </li>
+            <li class="card">
+                <i class="fa fa-paper-plane-o"></i>
+            </li>
+            <li class="card">
+                <i class="fa fa-anchor"></i>
+            </li>
+            <li class="card">
+                <i class="fa fa-bolt"></i>
+            </li>
+            <li class="card">
+                <i class="fa fa-cube"></i>
+            </li>
+            <li class="card match">
+                <i class="fa fa-anchor"></i>
+            </li>
+            <li class="card">
+                <i class="fa fa-leaf"></i>
+            </li>
+            <li class="card">
+                <i class="fa fa-bicycle"></i>
+            </li>
+            <li class="card">
+                <i class="fa fa-diamond"></i>
+            </li>
+            <li class="card">
+                <i class="fa fa-bomb"></i>
+            </li>
+            <li class="card open show">
+                <i class="fa fa-leaf"></i>
+            </li>
+            <li class="card open show">
+                <i class="fa fa-bomb"></i>
+            </li>
+            <li class="card open show">
+                <i class="fa fa-bolt"></i>
+            </li>
+            <li class="card">
+                <i class="fa fa-bicycle"></i>
+            </li>
+            <li class="card">
+                <i class="fa fa-paper-plane-o"></i>
+            </li>
+            <li class="card">
+                <i class="fa fa-cube"></i>
+            </li>
+        </ul>
+    </div>
+
+    <div id="dialogoverlay"></div>
+<div id="dialogbox">
+  <div>
+    <div id="dialogboxhead"></div>
+    <div id="dialogboxbody"></div>
+    <div id="dialogboxfoot"></div>
+  </div>
+</div>
+
+<button onclick="Alert.render()">Custom Alert</button>
+
+<script>
+        function CustomAlert(){
+            this.render = function(dialog){
+                var winW = window.innerWidth;
+                var winH = window.innerHeight;
+                var dialogoverlay = document.getElementById('dialogoverlay');
+                var dialogbox = document.getElementById('dialogbox');
+                dialogoverlay.style.display = "block";
+                dialogoverlay.style.height = winH+"px";
+                dialogbox.style.left = (winW/2) - (550 * .5)+"px";
+                dialogbox.style.top = "100px";
+                dialogbox.style.display = "block";
+                document.getElementById('dialogboxhead').innerHTML = "Congratulations!"     
+                document.getElementById('dialogboxbody').innerHTML = "You won the memory matching game!";
+                document.getElementById('dialogboxfoot').innerHTML = '<button onclick="Alert.ok()">OK</button>';
+            }
+            this.ok = function(){
+                document.getElementById('dialogbox').style.display = "none";
+                document.getElementById('dialogoverlay').style.display = "none";
+            }
+        }
+        var Alert = new CustomAlert();
+</script>
+
+
+<script src="js/app6.js"></script>
+
+</body>
+</html>
