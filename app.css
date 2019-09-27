@@ -76,7 +76,7 @@ h1 {
 }
 
 .deck .card.match {
-    cursor: default;
+    cursor: none;
     background: #02ccba;
     font-size: 33px;
 }
@@ -107,30 +107,3 @@ h1 {
     float: right;
     cursor: pointer;
 }
-
-/*
- * Styles for the 'You're a Winner--Game Over' Alert Box.
- */
-
-#dialogoverlay{
-	display: none;
-	opacity: .5;
-	position: fixed;
-	top: 0px;
-	left: 0px;
-	background: #FFF;
-	width: 100%;
-	z-index: 10;
-}
-#dialogbox{
-	display: none;
-	position: fixed;
-	background: rgb(87, 84, 84);
-	border-radius:1px; 
-	width:550px;
-	z-index: 10;
-}
-#dialogbox > div{ background:#FFF; margin:4px; }
-#dialogbox > div > #dialogboxhead{ background: rgb(209, 61, 61); font-family: "Times New Roman"; font-size:30px; padding-top: 25px; padding-bottom: 0; color:rgb(255, 255, 255); text-align: center;}
-#dialogbox > div > #dialogboxbody{ background: rgb(209, 61, 61); font-family: "Times New Roman"; font-size:30px; padding:10px; color:rgb(255, 255, 255); text-align: center;}
-#dialogbox > div > #dialogboxfoot{ background: rgb(209, 61, 61); padding:10px; text-align:right; }
